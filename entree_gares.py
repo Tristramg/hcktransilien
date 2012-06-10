@@ -4,7 +4,7 @@ from pyproj import Proj, transform
 from urllib.request import urlopen
 
 def get_sa(x,y):
-    request = "http://ms.api.transilien.com/?action=proximitylist&x={0}&y={1}distance=1000&type=stoparea".format(x,y)
+    request = "http://ms.api.transilien.com/?action=proximitylist&x={0}&y={1}distance=200&type=stoparea".format(x,y)
     response = urlopen(request).read()
     tree = fromstring(response)
     sa = tree.find('ProximityList/Proximity/StopArea')
